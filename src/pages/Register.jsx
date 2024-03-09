@@ -1,13 +1,13 @@
 import movie from "../assets/Movie.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
 function Register() {
   let [isLoading, setisLoading] = useState(false);
-
-  let username = useRef();
-  let email = useRef();
-  let password = useRef();
-  let repassword = useRef();
+  let navigate = useNavigate();
+  let username = useRef("");
+  let email = useRef("");
+  let password = useRef("");
+  let repassword = useRef("");
 
   function Validate() {
     return true;
@@ -33,11 +33,19 @@ function Register() {
 
         body: JSON.stringify(user),
       })
-        .than((res) => {
-          res.json();
-        })
-        .than((data) => {
-          console.log(data);
+        .then((data) => data.json())
+        .then((data) => {
+          if (data.massage == "User registered successfully!") {
+            navigate("/login");
+          }
+          if (data.massage == "Failed! Email is already in use!") {
+            alert(data.message);
+            return;
+          }
+          if (data.massage == "Failed! Username is already in use!") {
+            alert(data.message);
+            return;
+          }
         })
         .catch((err) => console.log(err))
         .finally(() => {
