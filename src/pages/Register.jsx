@@ -33,11 +33,13 @@ function Register() {
 
         body: JSON.stringify(user),
       })
-        .than(res => res.json())
-        .than(data => {
+        .than((res) => {
+          res.json();
+        })
+        .than((data) => {
           console.log(data);
         })
-        .catch(err => console.log(err))
+        .catch((err) => console.log(err))
         .finally(() => {
           setisLoading(false);
         });
