@@ -14,3 +14,31 @@ body {
   background-color: #161d2f;
   padding: 32px;
 }
+
+.rf input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #5a698f;
+  padding: 10px 0px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.rf input :focus {
+  outline: none;
+}
+
+.rf button {
+  padding: 15px;
+  background-color: #fc4747;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: center;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
