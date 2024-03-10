@@ -1,7 +1,12 @@
-import React from "react";
+import Navbar from "../components/Navbar";
 
 function Home() {
-  return <div>salom</div>;
+  return (
+    <div className="flex flex-col">
+      <Navbar />
+      <div></div>
+    </div>
+  );
 }
 
 export default Home;

@@ -2,7 +2,10 @@ import React from 'react'
 
 function Series() {
   return (
-    <div>Series</div>
+    <div className="flex flex-col">
+      <Navbar />
+      <div></div>
+    </div>
   )
 }
 

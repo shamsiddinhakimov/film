@@ -16,6 +16,7 @@ import Movies from "./pages/Movies";
 import Series from "./pages/Series";
 import About from "./pages/About";
 import Error from "./pages/Error";
+import Bookmarks from "./pages/Bookmarks";
 //components
 
 //css
@@ -75,7 +76,7 @@ function App() {
           path="/bookmarks"
           element={
             <ProtectRoute isAuthentication={token ? true : false}>
-              <Series></Series>
+              <Bookmarks></Bookmarks>
             </ProtectRoute>
           }
         ></Route>

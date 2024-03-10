@@ -35,7 +35,7 @@ function Login() {
           if (data.id) {
             localStorage.setItem("token", data.accessToken);
             localStorage.setItem("user", JSON.stringify(data));
-            navigate("/");
+            navigate('/');
           }
           if (
             data.massage == "User Not found." ||
@@ -48,6 +48,7 @@ function Login() {
         .catch((err) => console.log(err))
         .finally(() => {
           setisLoading(false);
+          navigate('/')
         });
     }
   }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Movies() {
+function Bookmarks() {
   return (
     <div className="flex flex-col">
       <Navbar />
@@ -9,4 +9,4 @@ function Movies() {
   )
 }
 
-export default Movies
+export default Bookmarks
