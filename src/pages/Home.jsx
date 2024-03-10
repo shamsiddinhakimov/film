@@ -10,7 +10,6 @@ function Home() {
   let search = useRef();
   console.log(search);
 
-  
   function handleChange(e) {
     e.preventDefault();
     console.log(search.target.value);
@@ -33,7 +32,9 @@ function Home() {
           />
         </div>
         <div className=" p-8">
-          <h2 className=" font-normal text-[32px] leading-[40px]">Trending</h2>
+          <h2 className=" font-normal text-[32px] leading-[40px] mb-4">
+            Trending
+          </h2>
           <div className="carousel rounded-box">
             <div className="carousel-item ">
               <img src={Film1} alt="" />
@@ -53,24 +54,9 @@ function Home() {
           </div>
 
           <div className="mt-10">
-            <h2 className="font-normal text-[32px] leading-[40px] mb-10">
+            <h2 className="font-normal text-[32px] leading-[40px] mb-4">
               Recommended for you
             </h2>
-            <div className="flex w-[1240px] ">
-              <div className="card card-compact w-96 bg-transparent shadow-xl">
-                <figure>
-                  <img
-                    src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                    alt="Shoes"
-                  />
-                </figure>
-                <div className="flex flex-col">
-                  <h2 className="font-normal text-[18px] loading-[22px] ">
-                    The Great Lands
-                  </h2>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
