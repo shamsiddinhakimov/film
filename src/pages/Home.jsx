@@ -10,9 +10,7 @@ function Home() {
   let search = useRef();
   console.log(search);
 
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_MOVIE_API}`)
-  }, []);
+  
   function handleChange(e) {
     e.preventDefault();
     console.log(search.target.value);
