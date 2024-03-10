@@ -1,9 +1,10 @@
 import movie from "../assets/Movie.svg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
 function Login() {
   let [isLoading, setisLoading] = useState(false);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  let location = useLocation();
   let username = useRef("");
   let password = useRef("");
 
@@ -21,6 +22,7 @@ function Login() {
         username: username.current.value,
         password: password.current.value,
       };
+
       setisLoading(true);
       fetch(`${import.meta.env.VITE_AUTH_API}signin`, {
         method: "POST",
@@ -35,7 +37,8 @@ function Login() {
           if (data.id) {
             localStorage.setItem("token", data.accessToken);
             localStorage.setItem("user", JSON.stringify(data));
-            navigate('/');
+            location("/");
+            navigate("/");
           }
           if (
             data.massage == "User Not found." ||
@@ -44,11 +47,14 @@ function Login() {
             alert(data.massage);
             return;
           }
+          if (token) {
+            navigate("/");
+          }
         })
         .catch((err) => console.log(err))
         .finally(() => {
           setisLoading(false);
-          navigate('/')
+          navigate("/");
         });
     }
   }
