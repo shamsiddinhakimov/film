@@ -6,6 +6,8 @@ import Film2 from "../assets/Film2.svg";
 import Film3 from "../assets/Film3.svg";
 import Film4 from "../assets/Film4.svg";
 import Film5 from "../assets/Film5.svg";
+import Card from "../components/CArd";
+
 function Home() {
   let search = useRef();
   console.log(search);
@@ -59,6 +61,7 @@ function Home() {
             </h2>
           </div>
         </div>
+      <Card/>
       </div>
     </div>
   );
