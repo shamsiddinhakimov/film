@@ -20,7 +20,7 @@ function Home() {
     <div className="flex ">
       <Navbar />
       <div>
-        <div className="flex mt-8 p-8 w-[100%] items-center gap-[24px] b">
+        <div className="flex mt-8 p-8 w-[100%] items-center gap-[24px] ">
           <label htmlFor="search">
             <img src={Search} alt="" />
           </label>
@@ -61,7 +61,17 @@ function Home() {
             </h2>
           </div>
         </div>
-      <Card/>
+
+        <div className="flex flex-wrap w-[1500px] justify-center ">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
       </div>
     </div>
   );
